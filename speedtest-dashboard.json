@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -30,6 +33,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "sR05L48nz"
+      },
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -66,7 +73,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.4.5",
+      "pluginVersion": "v1.0",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -98,7 +105,7 @@
           "hide": false,
           "measurement": "download",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT mean(\"value\") FROM \"download\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
@@ -147,7 +154,7 @@
           ],
           "measurement": "upload",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "B",
           "resultFormat": "time_series",
           "select": [
@@ -208,6 +215,7 @@
       }
     },
     {
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -302,7 +310,7 @@
           ],
           "measurement": "ping",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -327,7 +335,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -354,6 +362,6 @@
   "timezone": "",
   "title": "Bandwidth",
   "uid": "M27juGmgk",
-  "version": 4,
+  "version": 1,
   "weekStart": ""
 }
