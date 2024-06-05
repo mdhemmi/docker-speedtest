@@ -12,4 +12,4 @@ RUN apk --update add tzdata bash && \
 
 COPY speedtest.py /
 
-ENTRYPOINT [ "/usr/local/bin/python", "/speedtest.py", "--secure", "--simple" ]
+ENTRYPOINT [ "/usr/local/bin/python", "/speedtest.py" ]
