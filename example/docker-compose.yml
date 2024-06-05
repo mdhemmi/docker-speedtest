@@ -1,0 +1,17 @@
+services:
+  # Tests the current internet connection speed
+  # once per hour and writes the results into an
+  # InfluxDB instance
+  speedtest:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: speedtest
+    restart: always
+    privileged: true   # Needed for 'sleep' in the loop
+    environment:
+      - LOOP_DELAY=60
+      - DB_HOST=http://INFLUXDB:8086
+      - DB_NAME=speedtest
+      - DB_USERNAME=admin
+      - DB_PASSWORD=Test123!
